@@ -19,6 +19,7 @@ const player = {
         player.ui.demo.innerText = string.substr(0,player.n)
         player.ui.demo2.innerHTML = string.substr(0, player.n)  
         player.bindEvents()
+        player.play()
     },    
     bindEvents: () => {
         for (let key in player.events) {

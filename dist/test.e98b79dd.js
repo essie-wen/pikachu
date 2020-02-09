@@ -153,6 +153,7 @@ var player = {
     player.ui.demo.innerText = _css.default.substr(0, player.n);
     player.ui.demo2.innerHTML = _css.default.substr(0, player.n);
     player.bindEvents();
+    player.play();
   },
   bindEvents: function bindEvents() {
     for (var key in player.events) {
@@ -230,7 +231,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51659" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65397" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
