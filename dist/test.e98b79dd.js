@@ -136,7 +136,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var player = {
   id: undefined,
-  time: 100,
+  time: 50,
   ui: {
     demo: document.querySelector('#demo'),
     demo2: document.querySelector('#demo2')
@@ -175,11 +175,12 @@ var player = {
     player.ui.demo2.innerHTML = _css.default.substr(0, player.n);
     player.ui.demo.scrollTop = player.ui.demo.scrollHeight;
   },
-  play: function play() {
-    player.id = setInterval(player.run, player.time);
-  },
   pause: function pause() {
     return window.clearInterval(player.id);
+  },
+  play: function play() {
+    player.pause();
+    player.id = setInterval(player.run, player.time);
   },
   slow: function slow() {
     player.pause();
@@ -188,12 +189,12 @@ var player = {
   },
   normal: function normal() {
     player.pause();
-    player.time = 100;
+    player.time = 50;
     player.play();
   },
   fast: function fast() {
     player.pause();
-    player.time = 0;
+    player.time = 2;
     player.play();
   }
 };
@@ -231,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51540" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
